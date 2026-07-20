@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import { PLACEHOLDER_COVER } from "@/lib/utils";
 
 export function BookCard({ book }) {
   return (
     <div data-testid={`book-card-${book._id}`} className="group border border-border bg-card p-5 flex flex-col">
       <div className="overflow-hidden border border-border mb-4 aspect-[2/3] bg-secondary">
         <img
-          src={book.cover_url || "https://via.placeholder.com/200x300?text=No+Cover"}
+          src={book.cover_url || PLACEHOLDER_COVER}
           alt={book.title}
           className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />

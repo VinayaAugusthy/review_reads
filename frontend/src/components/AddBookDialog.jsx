@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
+import { PLACEHOLDER_COVER } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -73,6 +74,7 @@ export function AddBookDialog({ onAdded, trigger }) {
       <DialogContent className="max-w-lg">
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl">Suggest a Book</DialogTitle>
+          <DialogDescription>Search for a title or add its details manually to add it to the shelf.</DialogDescription>
         </DialogHeader>
         <Tabs defaultValue="search">
           <TabsList className="grid grid-cols-2">
@@ -103,7 +105,7 @@ export function AddBookDialog({ onAdded, trigger }) {
                   className="w-full flex gap-3 items-center text-left p-2 border border-border hover:border-primary/50 transition-colors"
                 >
                   <img
-                    src={r.cover_url || "https://via.placeholder.com/40x60?text=No+Cover"}
+                    src={r.cover_url || PLACEHOLDER_COVER}
                     alt={r.title}
                     className="w-10 h-14 object-cover shrink-0"
                   />

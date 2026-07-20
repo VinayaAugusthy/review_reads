@@ -9,6 +9,7 @@ import { AddBookDialog } from "@/components/AddBookDialog";
 import { REVIEW } from "@/constants/testIds";
 import { toast } from "sonner";
 import { Search } from "lucide-react";
+import { PLACEHOLDER_COVER } from "@/lib/utils";
 
 export default function NewReview() {
   const [params] = useSearchParams();
@@ -82,7 +83,7 @@ export default function NewReview() {
               onClick={() => setBook(r)}
               className="w-full flex gap-3 items-center text-left p-3 border border-border hover:border-primary/50 transition-colors"
             >
-              <img src={r.cover_url || "https://via.placeholder.com/40x60?text=No+Cover"} className="w-10 h-14 object-cover" alt={r.title} />
+              <img src={r.cover_url || PLACEHOLDER_COVER} className="w-10 h-14 object-cover" alt={r.title} />
               <div>
                 <p className="font-medium">{r.title}</p>
                 <p className="text-xs text-muted-foreground">{r.author}</p>
@@ -100,7 +101,7 @@ export default function NewReview() {
     <div className="max-w-2xl mx-auto px-6 py-16">
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">Step 2 of 2</p>
       <div className="flex gap-4 items-center mt-2 mb-8 p-4 border border-border bg-card">
-        <img src={book.cover_url || "https://via.placeholder.com/40x60?text=No+Cover"} className="w-12 h-16 object-cover" alt={book.title} />
+        <img src={book.cover_url || PLACEHOLDER_COVER} className="w-12 h-16 object-cover" alt={book.title} />
         <div>
           <h2 className="font-serif text-xl">{book.title}</h2>
           <p className="text-sm text-muted-foreground">{book.author}</p>

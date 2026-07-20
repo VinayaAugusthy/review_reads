@@ -6,6 +6,7 @@ import { REVIEW } from "@/constants/testIds";
 import { api } from "@/lib/api";
 import { toast } from "sonner";
 import { useAuth } from "@/context/AuthContext";
+import { PLACEHOLDER_COVER } from "@/lib/utils";
 
 export function ReviewCard({ review }) {
   const { user } = useAuth();
@@ -41,12 +42,17 @@ export function ReviewCard({ review }) {
     if (navigator.share) {
       try {
         await navigator.share({ title: review.title, text: `Check out this review of ${review.book_title}`, url });
+        return;
       } catch {
         // user cancelled share sheet
+        return;
       }
-    } else {
+    }
+    try {
       await navigator.clipboard.writeText(url);
       toast.success("Link copied to clipboard!");
+    } catch {
+      toast.error(`Could not copy automatically. Link: ${url}`);
     }
   };
 
@@ -58,7 +64,7 @@ export function ReviewCard({ review }) {
     >
       <div className="flex gap-5">
         <img
-          src={review.book_cover || "https://via.placeholder.com/80x120?text=Cover"}
+          src={review.book_cover || PLACEHOLDER_COVER}
           alt={review.book_title}
           className="w-16 h-24 object-cover border border-border shrink-0 transition-transform duration-500 group-hover:scale-105"
         />

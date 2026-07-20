@@ -8,6 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { REVIEW, COMMENT } from "@/constants/testIds";
 import { toast } from "sonner";
 import { Heart, Share2, Trash2, MessageCircle } from "lucide-react";
+import { PLACEHOLDER_COVER } from "@/lib/utils";
 
 export default function ReviewDetail() {
   const { id } = useParams();
@@ -41,12 +42,17 @@ export default function ReviewDetail() {
     if (navigator.share) {
       try {
         await navigator.share({ title: review.title, url });
+        return;
       } catch {
         // user cancelled
+        return;
       }
-    } else {
+    }
+    try {
       await navigator.clipboard.writeText(url);
       toast.success("Link copied to clipboard!");
+    } catch {
+      toast.error(`Could not copy automatically. Link: ${url}`);
     }
   };
 
@@ -87,7 +93,7 @@ export default function ReviewDetail() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <div className="flex gap-6 mb-8">
-        <img src={review.book_cover || "https://via.placeholder.com/100x150?text=Cover"} alt={review.book_title} className="w-24 h-36 object-cover border border-border" />
+        <img src={review.book_cover || PLACEHOLDER_COVER} alt={review.book_title} className="w-24 h-36 object-cover border border-border" />
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">
             {review.book_title} · {review.book_author}
