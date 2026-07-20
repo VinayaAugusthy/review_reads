@@ -1,0 +1,127 @@
+{
+  "theme_and_identity": {
+    "name": "The Warm Library (Editorial Book Review)",
+    "emotional_tone": "Cozy, Intellectual, Inviting, Editorial",
+    "theme_preference": "Light mode default (Cream/Maroon), with an optional 'Midnight Library' dark mode toggle.",
+    "design_archetype": "Organic & Earthy combined with Old Money Tech for a sophisticated but warm feel."
+  },
+  "typography": {
+    "font_strategy": "The 'Old Money Tech' Pairing (Classic Serif Head + Clean Sans Body). Avoid default sans-serifs for headings.",
+    "fonts_to_install": [
+      "@fontsource/cormorant-garamond",
+      "@fontsource/manrope"
+    ],
+    "heading_font": "Cormorant Garamond, font-serif",
+    "body_font": "Manrope, font-sans",
+    "hierarchy": {
+      "h1_hero": "text-5xl sm:text-6xl tracking-tight leading-none font-light italic",
+      "h2_section": "text-3xl sm:text-4xl tracking-tight leading-[1.1]",
+      "h3_card": "text-xl sm:text-2xl tracking-normal font-medium",
+      "body": "text-lg leading-relaxed text-foreground/90",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold text-muted-foreground"
+    },
+    "specific_rules": [
+      "No generic 'Inter' for headings.",
+      "Quotes on the landing page MUST be large, serif, and italicized.",
+      "Maintain a 60-75 character measure (max-w-prose) for book review content to ensure readability."
+    ]
+  },
+  "colors": {
+    "palette_description": "Warm creams, deep maroons, and terracotta/amber accents.",
+    "css_variables_light": {
+      "--background": "40 33% 98%",
+      "--foreground": "20 14% 15%",
+      "--card": "40 25% 95%",
+      "--card-foreground": "20 14% 15%",
+      "--popover": "40 33% 98%",
+      "--popover-foreground": "20 14% 15%",
+      "--primary": "350 40% 30%",
+      "--primary-foreground": "40 33% 98%",
+      "--secondary": "35 25% 88%",
+      "--secondary-foreground": "20 14% 15%",
+      "--muted": "35 25% 90%",
+      "--muted-foreground": "20 10% 45%",
+      "--accent": "15 50% 60%",
+      "--accent-foreground": "40 33% 98%",
+      "--border": "30 15% 85%",
+      "--input": "30 15% 85%",
+      "--ring": "350 40% 30%",
+      "--radius": "0.25rem"
+    },
+    "css_variables_dark": {
+      "--background": "15 15% 8%",
+      "--foreground": "40 25% 90%",
+      "--card": "15 15% 12%",
+      "--card-foreground": "40 25% 90%",
+      "--popover": "15 15% 10%",
+      "--popover-foreground": "40 25% 90%",
+      "--primary": "350 40% 45%",
+      "--primary-foreground": "40 33% 98%",
+      "--secondary": "15 15% 20%",
+      "--secondary-foreground": "40 25% 90%",
+      "--muted": "15 15% 20%",
+      "--muted-foreground": "40 15% 65%",
+      "--accent": "35 40% 50%",
+      "--accent-foreground": "15 15% 8%",
+      "--border": "15 15% 20%",
+      "--input": "15 15% 20%",
+      "--ring": "350 40% 45%"
+    },
+    "usage_rules": "Never use pure white (#FFFFFF) or pure black (#000000). Always use the tinted background/foreground colors. Use primary color (Maroon) sparingly for main CTAs and active states."
+  },
+  "layouts": {
+    "landing_page": "Asymmetric Bento/Editorial Grid. Combine large overlapping text (reading quotes) with high-quality warm images. Use ample padding (p-12 to p-24) between sections.",
+    "app_feed": "High Density Grid for book lists, but Cardless or 1px bordered structure for reviews. Add generous padding inside cards (p-6) so text doesn't hit the borders.",
+    "navigation": "Crystal Glassmorphism header: backdrop-blur-xl bg-background/70 border-b border-border/50. MUST have a visible CTA (Login/Signup) on desktop.",
+    "spacing_scale": "Use 2x normal padding. Instead of p-4, use p-8 for containers. Use gap-8 to gap-12 for grid layouts."
+  },
+  "component_instructions": {
+    "cards": "Avoid default drop shadows. Use flat solid surfaces (bg-card) with a 1px crisp border (border-border).",
+    "buttons": "Primary buttons should be rounded-none or rounded-sm to maintain an editorial print feel. Include a hover state that slightly lifts (-translate-y-0.5) and darkens the color.",
+    "forms_auth": "Use Shadcn Form, Input, and Button. Keep the form narrow (max-w-md) and centered, with a solid card background and large serif typography for the 'Welcome Back' heading.",
+    "quotes_carousel": "Use a subtle editorial marquee or slow-drifting flex row for reading quotes. Use italicized Cormorant Garamond at text-4xl. Muted foreground color.",
+    "reviews_feed": "Book covers MUST NOT stretch awkwardly. Use object-cover for covers, bordered gently. Review text should have max-w-prose and leading-relaxed.",
+    "toast_notifications": "Use Sonner for toasts, placed at bottom-right."
+  },
+  "visual_enhancers": {
+    "texture": "Add a very subtle SVG noise/grain overlay (opacity-30) fixed to the viewport to kill 'digital flatness'.",
+    "hover_effects": "Book covers should have a slight scale-up on hover (scale-105 transition-transform duration-500 ease-out).",
+    "borders": "Expose the skeleton selectively. Use 'Grid Borders' (border-collapse style) for the footer or feature grids."
+  },
+  "image_urls": {
+    "landing_hero": {
+      "url": "https://images.unsplash.com/photo-1630343710506-89f8b9f21d31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNvenl8ZW58MHx8fHwxNzg0NTU0MTA5fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Person reading book on warm brown/beige textile, perfect for the hero section background or side image."
+    },
+    "quotes_background": {
+      "url": "https://images.pexels.com/photos/32516751/pexels-photo-32516751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Relaxing setup with open books and a coffee cup. Can be used as a soft background or overlay for the quotes section."
+    },
+    "catalog_empty_state": {
+      "url": "https://images.pexels.com/photos/13061431/pexels-photo-13061431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Rows of antique leather-bound books. Great for an empty state, 404 page, or library 'suggestions' banner."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure text over images uses a gradient overlay (bg-gradient-to-t from-black/60 to-transparent) or text-shadow for WCAG AA compliance.",
+    "focus": "All focus states must use a high-contrast ring (focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background).",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='like-review-button', data-testid='submit-comment')."
+  },
+  "general_ui_ux_guidelines": [
+    "NEVER use generic placeholder images. Use provided image URLs or fetch book covers accurately via the Google Books API.",
+    "Do NOT center align paragraphs or long text blocks. Left-align text for readability, especially for book reviews.",
+    "Apply optical alignment over strict geometric alignment when matching icons and text inside buttons.",
+    "Create depth through z-index and layering rather than heavy drop-shadows."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "Use Lucide React for icons, stroke-width=1.5 for a finer, editorial look.",
+    "Do NOT use HTML-based generic components for dropdowns or date pickers. Always use Shadcn.",
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Do NOT apply universal transitions (transition: all). Target specific properties (transition-colors, transition-transform).",
+    "Do NOT apply center alignment to the main .App container in index.css.",
+    "NEVER use emoji characters as icons. Always use SVG icons (Lucide).",
+    "Ensure the header navigation NEVER has a completely transparent background if content scrolls beneath it. Use glassmorphism.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Every interaction needs micro-animations - hover states, transitions. Static = dead."
+  ]
+}
