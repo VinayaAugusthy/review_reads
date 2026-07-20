@@ -13,3 +13,9 @@
 
 export * from './auth';
 export * from './home';
+export * from './nav';
+export * from './landing';
+export * from './feed';
+export * from './books';
+export * from './reviews';
+export * from './comments';
